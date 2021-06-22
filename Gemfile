@@ -4,7 +4,6 @@ source 'http://rubygems.org'
 
 gem 'activerecord', '~> 5.2', '>= 5.2.6', require: 'active_record'
 gem 'bcrypt'
-gem 'pry'
 gem 'rake'
 gem 'require_all'
 gem 'shotgun'
@@ -22,5 +21,6 @@ group :test do
 end
 
 group :development do
+  gem 'pry'
   gem 'rubocop'
 end
