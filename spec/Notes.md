@@ -22,10 +22,15 @@ MODELS
 CONTROLLERS
     application
         '/'
+            >shows index
     user
         get '/create account'
+            > shows user/created_acount
         get '/signin'
-        get '/signout'
+            > shows user signing in
+        post '/signout'
+            > clear session
+            > redirect to home
     vlog
         get '/vlogs/:id'
             > shows vlog/show
@@ -39,17 +44,20 @@ CONTROLLERS
             > shows reviews/show
         get '/reviews/:id/edit'
             > shows reviews/edit
-            > 
-        get '/reviews/new' 
+        get '/reviews/new'
+            > shows reviews/new
         patch '/reviews/:id
             > updates reviews with id == :id
+            > redirect '/reviews/:id'
         post 'reviews'
             > creates new review
+            > redirect '/reviews/:id'
         delete '/reviews/:id/delete'
             > deletes review with id == :id
 VIEWS
     index 
         show latest reviews
+        show signup page?
     user
         action: create new user
         view > see all reviews
@@ -57,7 +65,8 @@ VIEWS
         show.erb > see all reviews for this vlog
         new.erb > action: create vlog > post to  /vlogs
     review
-        show.erb > action: delete review if owner
+        show.erb > action: delete review if owner > delete to /reviews/:id/delete
+            > link_to: /reviews/:id/edit if owner
         edit.erb > action: update review if ownwer > patch to /reviews/:id
         new.erb > action: create review > post to /reviews
 
