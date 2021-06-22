@@ -36,7 +36,10 @@ CONTROLLERS
             > redirect vlog/:id
     review
         get '/reviews/:id'
+            > shows reviews/show
         get '/reviews/:id/edit'
+            > shows reviews/edit
+            > 
         get '/reviews/new' 
         patch '/reviews/:id
             > updates reviews with id == :id
@@ -52,11 +55,10 @@ VIEWS
         view > see all reviews
     vlog
         show.erb > see all reviews for this vlog
-        new.erb
-
+        new.erb > action: create vlog > post to  /vlogs
     review
         show.erb > action: delete review if owner
-        edit.erb > action: update review if ownwer
-        new.erb > action: create review
+        edit.erb > action: update review if ownwer > patch to /reviews/:id
+        new.erb > action: create review > post to /reviews
 
       
