@@ -1,36 +1,36 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   # GET: /users/new
 
-  get "/create_account" do
+  get '/create_account' do
     erb :"/users/new.html"
   end
 
-  get "/sign_in" do
+  get '/sign_in' do
     erb :"/users/sign_in.html"
   end
 
-  post "/sign_in" do
-   #session[:user_id] = user.id
-   redirect '/users/:id'
+  post '/sign_in' do
+    # session[:user_id] = user.id
+    redirect '/users/:id'
   end
 
-
-  post "/sign_out" do
-    #session.destroy
-   redirect '/'
+  post '/sign_out' do
+    # session.destroy
+    redirect '/'
   end
 
   # shows us all reviews by the user
-  get "/users/:id" do
+  get '/users/:id' do
     erb :"/users/show.html"
   end
-  
+
   # creates new user
-  post "/users/new" do
-    #create new users from params
-    #send validations
-    redirect "/sign_in"
+  post '/users/new' do
+    # create new users from params
+    # send validations
+    redirect '/sign_in'
   end
 
   # GET: /users
@@ -38,20 +38,18 @@ class UsersController < ApplicationController
   #  erb :"/users/index.html"
   # end
 
-
-
   # GET: /users/5/edit
- # get "/users/:id/edit" do
+  # get "/users/:id/edit" do
   #  erb :"/users/edit.html"
- # end
+  # end
 
   # PATCH: /users/5
- # patch "/users/:id" do
+  # patch "/users/:id" do
   #  redirect "/users/:id"
- # end
+  # end
 
   # DELETE: /users/5/delete
- # delete "/users/:id/delete" do
+  # delete "/users/:id/delete" do
   #  redirect "/users"
- # end
+  # end
 end

@@ -8,4 +8,5 @@ end
 
 use UsersController
 run ApplicationController
+use ReviewsController
 use VlogsController
