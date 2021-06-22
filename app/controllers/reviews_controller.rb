@@ -1,10 +1,5 @@
 class ReviewsController < ApplicationController
 
-  # GET: /reviews
-  get "/reviews" do
-    erb :"/reviews/index.html"
-  end
-
   # GET: /reviews/new
   get "/reviews/new" do
     erb :"/reviews/new.html"
@@ -12,6 +7,8 @@ class ReviewsController < ApplicationController
 
   # POST: /reviews
   post "/reviews" do
+    # create review
+    #redirect to review
     redirect "/reviews"
   end
 
@@ -27,11 +24,20 @@ class ReviewsController < ApplicationController
 
   # PATCH: /reviews/5
   patch "/reviews/:id" do
+    # update review
     redirect "/reviews/:id"
   end
 
   # DELETE: /reviews/5/delete
   delete "/reviews/:id/delete" do
-    redirect "/reviews"
+    #delete the review
+    #redirect to /vlog/:vlog_id
+    redirect "/vlog/"
   end
+
+   # GET: /reviews
+  #get "/reviews" do
+  #  erb :"/reviews/index.html"
+  #end
+
 end
