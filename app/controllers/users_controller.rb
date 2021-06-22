@@ -10,9 +10,27 @@ class UsersController < ApplicationController
     erb :"/users/sign_in.html"
   end
 
+  post "/sign_in" do
+   #session[:user_id] = user.id
+   redirect '/users/:id'
+  end
+
+
   post "/sign_out" do
     #session.destroy
    redirect '/'
+  end
+
+  # shows us all reviews by the user
+  get "/users/:id" do
+    erb :"/users/show.html"
+  end
+  
+  # creates new user
+  post "/users/new" do
+    #create new users from params
+    #send validations
+    redirect "/sign_in"
   end
 
   # GET: /users
@@ -21,15 +39,6 @@ class UsersController < ApplicationController
   # end
 
 
-  # POST: /users
-  #post "/users" do
-  #  redirect "/users"
-  #end
-
-  # GET: /users/5
-  #get "/users/:id" do
-   # erb :"/users/show.html"
-  #end
 
   # GET: /users/5/edit
  # get "/users/:id/edit" do

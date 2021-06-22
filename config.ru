@@ -8,4 +8,3 @@ end
 
 use UsersController
 run ApplicationController
-
