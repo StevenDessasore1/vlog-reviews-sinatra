@@ -20,7 +20,7 @@ attr: name
 belongs to vlog  
 attr: content  
 attr: rating  
-foreign_key:     vlog_id  
+foreign_key: vlog_id  
 foreign_key: user_id   
 
 ## Controllers
