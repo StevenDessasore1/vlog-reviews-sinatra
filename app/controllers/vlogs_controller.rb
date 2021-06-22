@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class VlogsController < ApplicationController
-  
   # GET: /vlogs/new
   get '/vlogs/new' do
     erb :"/vlogs/new.html"
